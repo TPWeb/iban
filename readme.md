@@ -31,7 +31,11 @@ You can use the facade for shorter code. Add this to your aliases:
 ```php
 $ibannr = "BE....";
 $iban = new Iban($ibannr);
+if($iban->isIbanValid()) {
+    echo "IBAN is valid";
+}
 ```
+
 ## Calculation
 ```php
 $ibannr = "BE....";
