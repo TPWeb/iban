@@ -35,15 +35,125 @@ if($iban->isIbanValid()) {
     echo "IBAN is valid";
 }
 ```
+### Laraval validator
+```php
+public function store(Request $request) {
+    $this->validate($request, ['ibannumber' => 'required|iban', 'bicnumber' => 'required|bic']);
+}
+```
 
-## Calculation
+## Calculation (Only BE en NL)
 ```php
 $ibannr = "BE....";
 $iban = new Iban($ibannr);
+$bic = $iban->calculateBic();
 ```
 
 
 The complete documentation can be found at: [http://www.tpweb.org/my-projects/php-iban-library/](http://www.tpweb.org/my-projects/php-iban-library/)
+
+# Countries Supported
+The following 99 official and *unofficial* IBAN countries are supported.
+
+* Albania (AL)
+* *Algeria* (DZ)
+* Andorra (AD)
+* *Angola* (AO)
+* Austria (AT)
+* Azerbaijan (AZ)
+* Bahrain (BH)
+* Belgium (BE)
+* *Benin* (BJ)
+* Bosnia and Herzegovina (BA)
+* Brazil (BR)
+* British Virgin Islands (VG)
+* Bulgaria (BG)
+* *Burkina Faso* (BF)
+* *Burundi* (BI)
+* *Cameroon* (CM)
+* *Cape Verde* (CV)
+* Costa Rica (CR)
+* *Côte d'Ivoire* (CI)
+* Croatia (HR)
+* Cyprus (CY)
+* Czech Republic (CZ)
+* Denmark (DK)
+ * Faroe Islands (FO)
+ * Greenland (GL)
+* Dominican Republic (DO)
+* Estonia (EE)
+* Finland (FI)
+ * Åland Islands (AX)
+* France (FR)
+ * French Guiana (GF)
+ * French Polynesia (PF)
+ * French Southern Territories (TF)
+ * Guadelope (GP)
+ * Martinique (MQ)
+ * Mayotte (YT)
+ * New Caledonia (NC)
+ * Réunion (RE)
+ * Saint Barhélemy (BL)
+ * Saint Martin (French Part) (MF)
+ * Saint-Pierre and Miquelon (PM)
+ * Wallis and Futuna (WF)
+* Georgia (GE)
+* Germany (DE)
+* Gibraltar (GI)
+* Greece (GR)
+* Guatemala (GT)
+* Hungary (HU)
+* Iceland (IS)
+* *IIBAN (Internet)* (AA)
+* *Iran* (IR)
+* Ireland (IE)
+* Israel (IL)
+* Italy (IT)
+* Jordan (JO)
+* Kazakhstan (KZ)
+* Kosovo (XK)
+* Kuwait (KW)
+* Latvia (LV)
+* Lebanon (LB)
+* Liechtenstein (LI)
+* Lithuania (LT)
+* Luxembourg (LU)
+* Macedonia (MK)
+* *Madagascar* (MG)
+* *Mali* (ML)
+* Malta (MT)
+* Mauritania (MR)
+* Mauritius (MU)
+* Moldova (MD)
+* Monaco (MC)
+* Montenegro (ME)
+* *Mozambique* (MZ)
+* Netherlands (NL)
+* Norway (NO)
+* Pakistan (PK)
+* Palestine (PS)
+* Poland (PL)
+* Portugal (PT)
+* Qatar (QA)
+* Romania (RO)
+* Saint Lucia (LC)
+* San Marino (SM)
+* São Tomé and Príncipe (ST)
+* Saudi Arabia (SA)
+* *Senegal* (SN)
+* Serbia (RS)
+* Seychelles (SC)
+* Slovakia (SK)
+* Slovenia (SI)
+* Spain (ES)
+* Sweden (SE)
+* Switzerland (CH)
+* Timor-Leste (TL)
+* Tunisia (TN)
+* Turkey (TR)
+* *Ukraine* (UA)
+* United Arab Emirates (AE)
+* United Kingdom (GB)
 
 # Support
 

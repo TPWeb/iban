@@ -23,6 +23,10 @@ class IbanServiceProvider extends ServiceProvider
 	 * @var bool
 	 */
 	protected $defer = false;
+
+	protected $rules = [
+		'iban', 'bic'
+	];
 	
 	/**
 	 * Bootstrap the application events.
@@ -42,6 +46,7 @@ class IbanServiceProvider extends ServiceProvider
 	public function register()
 	{
 		$this->app->bind('Iban', 'TPWeb\Iban\Iban');
+		$this->addNewRules();
 	}
 
 	/**
@@ -52,5 +57,21 @@ class IbanServiceProvider extends ServiceProvider
 	public function provides()
 	{
 		return ['iban'];
+	}
+
+	protected function addNewRules()
+	{
+		foreach ($this->rules as $rule)
+		{
+			$this->extendValidator($rule);
+		}
+	}
+
+	protected function extendValidator($rule)
+	{
+		$method = 'validate' . studly_case($rule);
+		$translation = $this->app['translator']->get('iban::validation');
+
+		$this->app['validator']->extend($rule, 'TPWeb\Iban\Validation\ValidatorExtensions@' . $method, $translation[$rule]);
 	}
 }
