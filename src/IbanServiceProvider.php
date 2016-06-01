@@ -36,6 +36,8 @@ class IbanServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		AliasLoader::getInstance()->alias('Iban', 'TPWeb\Iban\Iban');
+    	$this->loadTranslationsFrom(__DIR__.'/lang', 'iban');
+		$this->addNewRules();
 	}
 
 	/**
@@ -46,7 +48,6 @@ class IbanServiceProvider extends ServiceProvider
 	public function register()
 	{
 		$this->app->bind('Iban', 'TPWeb\Iban\Iban');
-		$this->addNewRules();
 	}
 
 	/**
