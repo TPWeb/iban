@@ -31,4 +31,12 @@ class Belgium extends Country
     public $currency_iso4217 = "EUR";
     public $central_bank_url = "www.nbb.be";
     public $central_bank_name = "National Bank of Belgium";
+    
+    public function calculateBic($iban) {
+        $client = new \SoapClient('http://www.ibanbic.be/IBANBIC.asmx?WSDL');
+        $bban = $client->getBelgianBBAN(array('Value' => $iban))->getBelgianBBANResult;
+        $bic = $client->BBANtoBIC(array('Value' => $bban))->BBANtoBICResult;
+        $bic = preg_replace('/[^a-zA-Z0-9]/', '', $bic);
+        return $bic;
+    }
 }
