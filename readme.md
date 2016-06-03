@@ -1,4 +1,4 @@
-# PHP TargetPay Library
+# PHP IBAN & BIC Library
 [![Build Status](https://travis-ci.org/TPWeb/iban.svg?branch=master)](https://travis-ci.org/TPWeb/iban)
 [![Coverage Status](https://coveralls.io/repos/github/TPWeb/iban/badge.svg?branch=master)](https://coveralls.io/github/TPWeb/iban?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/tpweb/iban/v/stable.svg)](https://packagist.org/packages/tpweb/iban)
