@@ -36,9 +36,9 @@ class Belgium extends Country
         //https://www.nbb.be/doc/be/be/protocol/wijzigingen_aan_de_lijst_van_bankidentificatiecodes.pdf
         $controle = substr($iban, 4, 3);
         $list = [];
-        $list[] = ['min' => 000, 'max' => 000, 'bic' => 'BPOT BE B1', 'bank' => 'bpost bank'];
-        $list[] = ['min' => 001, 'max' => 049, 'bic' => 'GEBA BE BB', 'bank' => 'BNP Paribas Fortis'];
-        $list[] = ['min' => 050, 'max' => 099, 'bic' => 'GKCC BE BB', 'bank' => 'BELFIUS BANK'];
+        $list[] = ['min' => 0, 'max' => 0, 'bic' => 'BPOT BE B1', 'bank' => 'bpost bank'];
+        $list[] = ['min' => 1, 'max' => 49, 'bic' => 'GEBA BE BB', 'bank' => 'BNP Paribas Fortis'];
+        $list[] = ['min' => 50, 'max' => 99, 'bic' => 'GKCC BE BB', 'bank' => 'BELFIUS BANK'];
         $list[] = ['min' => 100, 'max' => 101, 'bic' => 'NBBE BE BB 203', 'bank' => 'Nationale Bank van België'];
         $list[] = ['min' => 102, 'max' => 102, 'bic' => 'nav', 'bank' => 'Uitwisselingscentrum en Verrekening (U.C.V.)'];
         $list[] = ['min' => 103, 'max' => 108, 'bic' => 'NICA BE BB', 'bank' => 'Crelan'];
