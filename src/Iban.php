@@ -117,8 +117,9 @@ class Iban
     private $country;
 
     /**
-     * Construct TargetPay
-     * @param  Transaction|null		$transaction
+     * Construct Iban
+     * @param iban
+     * @param bic
      */
     function __construct($iban = null, $bic = null) {
         if($iban != null) {
