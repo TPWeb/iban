@@ -16,11 +16,11 @@ class ValidatorExtensions
     
 	public function validateBic($attribute, $value, $parameters)
 	{
-        return $this->validator->isBic($value);
+        	return $this->validator->isBic($value);
 	}
 
 	public function validateIban($attribute, $value, $parameters)
 	{
-        return $this->validator->isIban($value);
+        	return $this->validator->isIban($value);
 	}
 }
