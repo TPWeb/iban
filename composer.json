@@ -1,6 +1,6 @@
 {
   "name": "tpweb/iban",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "PHP Iban & Bic Library",
   "keywords": ["iban", "bic"],
   "homepage": "http://www.tpweb.org/my-projects/php-iban/",
@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "illuminate/support": "~5.0",
+    "illuminate/support": "5.*",
     "php": ">=5.6"
   },
   "require-dev": {
@@ -30,5 +30,15 @@
       "psr-4": {
           "TPWeb\\Iban\\": "src/"
       }
-  }
+  },
+  "extra": {
+       "laravel": {
+           "providers": [
+               "TPWeb\\Iban\\IbanServiceProvider"
+           ],
+            "aliases": {
+                "Vat": "TPWeb\\Iban\\IbanFacade"
+            }
+       }
+    }
 }
