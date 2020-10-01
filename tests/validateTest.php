@@ -65,6 +65,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.custom.foo.iban')->andReturn('validation.custom.foo.iban');
         $translator->shouldReceive('get')->once()->with('validation.custom')->andReturn('validation.custom');
         $translator->shouldReceive('get')->once()->with('validation.iban')->andReturn('validation.iban');
+        $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
 
         $factory = new Factory($translator, $container);
@@ -112,6 +113,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.custom.foo.bic')->andReturn('validation.custom.foo.bic');
         $translator->shouldReceive('get')->once()->with('validation.custom')->andReturn('validation.custom');
         $translator->shouldReceive('get')->once()->with('validation.bic')->andReturn('validation.bic');
+        $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
 
         $factory = new Factory($translator, $container);
