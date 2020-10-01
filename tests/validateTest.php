@@ -67,6 +67,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.iban')->andReturn('validation.iban');
         $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
+        $translator->shouldReceive('get')->once()->with('validation.values.foo.BE68539007547000')->andReturn('validation.values.foo.BE68539007547000');
 
         $factory = new Factory($translator, $container);
         $factory->extend('iban', 'TPWeb\Iban\Validation\ValidatorExtensions@validateIban', ':attribute must be a valid IBAN number');
@@ -115,6 +116,7 @@ class validateTest extends TestCase
         $translator->shouldReceive('get')->once()->with('validation.bic')->andReturn('validation.bic');
         $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
         $translator->shouldReceive('get')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
+        $translator->shouldReceive('get')->once()->with('validation.values.foo.ABNANL2AWRONGBIC')->andReturn('validation.values.foo.ABNANL2AWRONGBIC');
 
         $factory = new Factory($translator, $container);
         $factory->extend('bic', 'TPWeb\Iban\Validation\ValidatorExtensions@validateBic', ':attribute must be a valid IBAN number');
