@@ -1,9 +1,10 @@
 <?php
 use TPWeb\Iban\Iban;
+use PHPUnit\Framework\TestCase;
 
-class IbanTest extends \PHPUnit_Framework_TestCase
+class IbanTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
     }
