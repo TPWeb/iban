@@ -37,7 +37,7 @@ class validateTest extends TestCase
         $extensions = new ValidatorExtensions($validator);
 
         $container = Mockery::mock('Illuminate\Container\Container');
-        $translator = Mockery::mock('Symfony\Component\Translation\TranslatorInterface');
+        $translator = Mockery::mock('Illuminate\Contracts\Translation\Translator');
 
         $container->shouldReceive('make')->once()->with('TPWeb\Iban\Validation\ValidatorExtensions')->andReturn($extensions);
         $validator->shouldReceive('isIban')->once()->with('BE68539007547034')->andReturn(true);
@@ -54,7 +54,7 @@ class validateTest extends TestCase
         $extensions = new ValidatorExtensions($validator);
 
         $container = Mockery::mock('Illuminate\Container\Container');
-        $translator = Mockery::mock('Symfony\Component\Translation\TranslatorInterface');
+        $translator = Mockery::mock('Illuminate\Contracts\Translation\Translator');
 
         $container->shouldReceive('make')->once()->with('TPWeb\Iban\Validation\ValidatorExtensions')->andReturn($extensions);
         $validator->shouldReceive('isIban')->once()->with('BE68539007547000')->andReturn(false);
@@ -79,7 +79,7 @@ class validateTest extends TestCase
         $extensions = new ValidatorExtensions($validator);
 
         $container = Mockery::mock('Illuminate\Container\Container');
-        $translator = Mockery::mock('Symfony\Component\Translation\TranslatorInterface');
+        $translator = Mockery::mock('Illuminate\Contracts\Translation\Translator');
 
         $container->shouldReceive('make')->once()->with('TPWeb\Iban\Validation\ValidatorExtensions')->andReturn($extensions);
         $validator->shouldReceive('isBic')->once()->with('ABNANL2A')->andReturn(true);
@@ -96,7 +96,7 @@ class validateTest extends TestCase
         $extensions = new ValidatorExtensions($validator);
 
         $container = Mockery::mock('Illuminate\Container\Container');
-        $translator = Mockery::mock('Symfony\Component\Translation\TranslatorInterface');
+        $translator = Mockery::mock('Illuminate\Contracts\Translation\Translator');
 
         $container->shouldReceive('make')->once()->with('TPWeb\Iban\Validation\ValidatorExtensions')->andReturn($extensions);
         $validator->shouldReceive('isBic')->once()->with('ABNANL2AWRONGBIC')->andReturn(false);
